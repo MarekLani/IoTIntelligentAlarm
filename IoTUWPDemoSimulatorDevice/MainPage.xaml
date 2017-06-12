@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="IotUWPDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IotUWPDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+        <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Orientation="Vertical" Padding="20,20,0,0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Current Values" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox HorizontalAlignment="Left"  x:Name="Display" Width="350" TextWrapping="Wrap" Background="{Binding Path=DisplayBackground, Mode=OneWay}" Text="{Binding DisplayText, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <TextBlock Text="Buzzer" VerticalAlignment="Center" Margin="0,0,60,0"/>
+                <ToggleSwitch x:Name="Buzzer" IsOn="{Binding Buzzer}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <TextBlock Text="Distance" VerticalAlignment="Center" Margin="0,0,60,0"/>
+                <Slider Width="250"  x:Name="Distance" Maximum="100" Minimum="0" Value="{Binding Distance, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <TextBlock Text="Humidity" VerticalAlignment="Center" Margin="0,0,60,0"/>
+                <Slider Width="250"  x:Name="Hum" Maximum="100" Minimum="0" Value="{Binding Path=Hum, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <TextBlock Text="Temperature" VerticalAlignment="Center" Margin="0,0,35,0"/>
+                <Slider Width="250" x:Name="Temp" Maximum="100" Minimum="0" Value="{Binding Path=Temp, Mode=TwoWay}"/>
+            </StackPanel>
+        <CaptureElement Name="PreviewControl" Stretch="Uniform"/>
+    </StackPanel>
+</Page>

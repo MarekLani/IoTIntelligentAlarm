@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="IoTDemoMobileApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTDemoMobileApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="White">
+    <Page.Resources>
+        <DataTemplate x:Name="ListViewItemTemplate">
+          
+                <Border BorderThickness="0,0,0,1" BorderBrush="Gray">
+
+                <StackPanel Margin="0.5" Orientation="Vertical">
+                    <TextBlock Text="{Binding Path=EntrantName}"/>
+                    <Image Source="{Binding Path=ImageUri}" />
+                </StackPanel>
+            </Border>
+        
+        </DataTemplate>
+    </Page.Resources>
+
+    <Pivot Foreground="White" x:Name="PagePivot">
+        <!--<PivotItem Header="Today">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Content="Refresh" Click="Button_Click"/>
+                <ListView Grid.Row="1" x:Name="TodaysEntrants" IsItemClickEnabled="True" ItemClick="TodaysEntrants_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding timestamp}"/>
+                                <Image MaxHeight="200" Source="{Binding name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </PivotItem>
+        <PivotItem Header="Yesterday">
+            <StackPanel>
+                <Button Content="Refresh" Click="Button_Click"/>
+                <ListView x:Name="YesterdaysEntrants"></ListView>
+            </StackPanel>
+        </PivotItem>-->
+        
+    </Pivot>
+</Page>
